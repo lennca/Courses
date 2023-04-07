@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%- element.createdBy %></h5>
+    <p class="card-text"><%- element.body %> </p>
+    <p class="card-text">
+      <% for( let index = 0; index < element.tags.length; index++ ) { %>
+        <span class="badge badge-pill badge-info"><%-element.tags[index]%></span>
+      <% } %>
+    </p>
+    <a href="./snippets/<%=element._id%>" class="btn btn-primary">Display</a>
+    <% if (locals.user) { %>
+      <% if (locals.user.username === element.createdBy) { %>
+        <a href="./snippets/<%=element._id%>/edit" class="btn btn-warning">Edit</a>
+        <a href="./snippets/<%=element._id%>/delete" class="btn btn-danger">Delete</a>
+      <% } %>
+    <% } %>
+  </div>
+</div>

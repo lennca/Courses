@@ -1,0 +1,35 @@
+{
+  "name": "assignment-1-the-gathering-web-scraper",
+  "version": "1.0.0",
+  "description": "? solution for Assignment 1 course 1DV023",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "lint": "npx eslint ./src || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.lnu.se:1dv023/student/?/assignment-1-the-gathering-web-scraper.git"
+  },
+  "author": "?",
+  "license": "ISC",
+  "dependencies": {
+    "fetch-cookie": "^0.11.0",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "@lnu/eslint-config": "^1.1.2",
+    "eslint": "^7.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^31.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@lnu"
+  },
+  "type": "module"
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %> 
+  <body>
+    <%- include('../partials/navigation.ejs') %> 
+    <div class="container">
+      <%- include('../partials/alert.ejs', {success, danger}) %>
+      <h1>Snippets</h1>
+      <!-- Search by tag form -->
+      <%- include('../partials/selectForm.ejs', {action: './snippets/filter/tag', csrfToken, options: tags, type: 'tag'}) %>
+      <!-- Search by user form -->
+      <%- include('../partials/selectForm.ejs', {action: './snippets/filter/user', csrfToken, options: users, type: 'user'}) %>
+      <% snippets.forEach(element => { %>
+        <%- include('../partials/snippetCard.ejs', {element}) %>
+      <% }) %>
+    </div>
+  <%- include('../partials/bs_script.ejs') %> 
+  </body>
+</html>

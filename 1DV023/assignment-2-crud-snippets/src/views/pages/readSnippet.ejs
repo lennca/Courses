@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %> 
+  <body>
+    <%- include('../partials/navigation.ejs') %> 
+    <div class="container">
+      <h1> Read snippet </h1>
+      <h5><%-snippet.createdBy%></h5>
+      <div class="form-group">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="snippetBody" readonly><%-snippet.body%></textarea>
+      </div>
+      <p class="card-text">
+        <% for( let index = 0; index < snippet.tags.length; index++ ) { %>
+          <span class="badge badge-pill badge-info"><%-snippet.tags[index]%></span>
+        <% } %>
+      </p>
+      <% if (locals.user) { %>
+        <% if (locals.user.username === snippet.createdBy) { %>
+          <a href="./snippets/<%=snippet._id%>/edit" class="btn btn-warning">Edit</a>
+          <a href="./snippets/<%=snippet._id%>/delete" class="btn btn-danger">Delete</a>
+        <% } %>
+      <% } %>
+    </div>
+  <%- include('../partials/bs_script.ejs') %> 
+  </body>
+</html>

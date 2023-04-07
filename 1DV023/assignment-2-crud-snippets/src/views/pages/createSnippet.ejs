@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %> 
+  <body>
+    <%- include('../partials/navigation.ejs') %> 
+    <div class="container">
+      <%- include('../partials/alert.ejs', {success, danger}) %>
+      <h1> Create snippet </h1>
+      <%- include('../partials/snippetForm.ejs', {tagString: '', csrfToken, action: "./snippets/create", snippetBody: "", buttonText: "Submit"}) %>
+    </div>
+  <%- include('../partials/bs_script.ejs') %> 
+  </body>
+</html>

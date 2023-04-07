@@ -1,0 +1,17 @@
+<form action="<%=action%>" method="POST">
+  <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+
+  <label for="inlineFormCustomSelect">Select snippets filtered by <%-type%>:</label>
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1 w-50">
+      <select name="selectTag" class="w-100 mr-sm-2" id="inlineFormCustomSelect">
+        <% for( let index = 0; index < options.length; index++ ) { %>
+          <option value="<%=options[index]%>"><%-options[index]%></option>
+        <% } %>
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</form>
